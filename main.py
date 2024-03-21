@@ -2,13 +2,13 @@ import requests
 
 import pandas as pd
 
-proxies = {
-    'http': 'https://advanced.name/freeproxy/65fc7036e5d8c@67.205.189.239',
-}
+from config import PROXIES, URL_WILD
+
+PROXIES
 
 
 def get_product():
-    url = 'https://catalog.wb.ru/catalog/electronic18/v2/catalog?appType=1&cat=9491&curr=rub&dest=-1257786&sort=popular&spp=30'
+    URL_WILD
 
     headers = {
         'Accept': '*/*',
@@ -25,7 +25,7 @@ def get_product():
         'sec-ch-ua-platform': 'Windows',
     }
 
-    response = requests.get(url=url, headers=headers, proxies=proxies)
+    response = requests.get(url=URL_WILD, headers=headers, proxies=PROXIES)
     return response.json()
 
 
